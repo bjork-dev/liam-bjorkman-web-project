@@ -61,6 +61,6 @@ const getWeather = async () => { //Use API and global variables to fetch correct
   }
   
   async function showPosition(position) { //Assign coords to global variables to use in API call.
-    lat = Math.round(position.coords.latitude);
-    lon = Math.round(position.coords.longitude);
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
   }
