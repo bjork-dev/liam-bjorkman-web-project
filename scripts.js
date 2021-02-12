@@ -11,8 +11,9 @@ function logIn()
     h1.innerHTML = "Hello, " + username +"!";
     document.getElementById('loginCard').appendChild(h1);
     var logout = document.createElement('button')
+    logout.setAttribute("class", "button logoutButton");
     logout.innerHTML = 'Logout';
-    
+
     logout.onclick = function refreshPage()
     {
     window.location.reload();

@@ -6,6 +6,9 @@
     font-family: Arial;
     padding: 10px;
     background: #f1f1f1;
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards;
   }
   
   /* Header/Blog Title */
@@ -106,6 +109,34 @@
     opacity: 0.7;
     font-family: "Lucida Console", "Courier New", monospace;
   }
+  .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  .loginButton {
+    background-color: rgb(35, 100, 141);
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+  .loginButton:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  .logoutButton {
+    background-color: rgb(199, 23, 23);
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+  .logoutButton:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 800px) {
@@ -122,3 +153,11 @@
       width: 100%;
     }
   }
+  @keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     }
+    }
