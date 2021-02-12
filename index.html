@@ -14,7 +14,6 @@
             <h1>Weather</h1>
         </div>
     </div>
-
     </div>
     
     <div class="topnav">
@@ -25,23 +24,28 @@
     <div class="row">
       <div class="leftcolumn">
         <div class="card">
-          <h2>Weather Forecast</h2>
-          <h5><script> document.write(new Date().toLocaleDateString());</script></h5>
-
+          <h1>Weather Forecast</h1>
+          <h5 id="date"></h5>
           <p id="weatherText">Not logged in. Please login to view data.</p>
           <p id="cord"></p>
           <p id ="json"></p>
-
+          <h2 id="location"></h3>
+          <h3 id="desc"></h3>
+          <h3 id="temp"></>
+          <h3 id="feelsLike"></h3>
+          <h3 id="tempMax"></h3>
+          <h3 id="tempMin"></h3>
         </div>
       </div>
+
       <div class="rightcolumn">
-        <div class="card">
+        <div class="card" id="loginCard">
           <h2>Login</h2>
           <form name="form">
-            <label for="username">First name:</label>
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username"><br><br>
-            <label for="password">Password: </label>
-            <input type="text" id="password" name="password"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
             <input type="button" value="Login" onclick="logIn()">
           </form>
         </div>
@@ -49,10 +53,8 @@
     </div>
     
     <div class="footer">
-      
     </div>
     
-
     <script type="text/javascript" src="scripts.js"></script>
     </body>
     </html>
