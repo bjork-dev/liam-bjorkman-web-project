@@ -1,11 +1,58 @@
 <!doctype html>
 <html>
 <head>
-<title>Web Page</title>
+<link rel="stylesheet" href="style.css">
+<title>Weather</title>
 <meta name="description" content="Web Page">
 <meta name="keywords" content="web page">
 </head>
 <body>
-Test.
-</body>
-</html>
+
+    <div class="header">
+        <img src="Images/cloud.jpg">
+        <div class="text-block">
+            <h1>Weather</h1>
+        </div>
+    </div>
+
+    </div>
+    
+    <div class="topnav">
+      <a href="#">Home</a>
+      <a href="#" style="float:right">About</a>
+    </div>
+    
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h2>Weather Forecast</h2>
+          <h5><script> document.write(new Date().toLocaleDateString());</script></h5>
+
+          <p id="weatherText">Not logged in. Please login to view data.</p>
+          <p id="cord"></p>
+          <p id ="json"></p>
+
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>Login</h2>
+          <form name="form">
+            <label for="username">First name:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password: </label>
+            <input type="text" id="password" name="password"><br><br>
+            <input type="button" value="Login" onclick="logIn()">
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      
+    </div>
+    
+
+    <script type="text/javascript" src="scripts.js"></script>
+    </body>
+    </html>
