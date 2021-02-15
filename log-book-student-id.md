@@ -6,3 +6,9 @@ Add simple web design, mock login functionality and simple API call.
 
 ## 2021-02-12 kl.13:00
 Make JSON response readable for user. Make logout button and cleanup design.
+
+## 2020-02-15 10:00
+Add login through third-party service.
+
+## 2020-02-15 14:50
+Finished adding login and register functions. Login provided through Firebase.

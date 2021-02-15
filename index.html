@@ -1,60 +1,88 @@
 <!doctype html>
 <html>
+
 <head>
-<link rel="stylesheet" href="style.css">
-<title>Weather</title>
-<meta name="description" content="Web Page">
-<meta name="keywords" content="web page">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather</title>
+  <meta name="description" content="Web Page">
+  <meta name="keywords" content="web page">
 </head>
+
 <body>
 
-    <div class="header">
-        <img src="Images/cloud.jpg">
-        <div class="text-block">
-            <h1>Weather</h1>
-        </div>
+  <div class="header">
+    <img src="Images/cloud.jpg">
+    <div class="text-block">
+      <h1>Weather</h1>
     </div>
-    </div>
-    
-    <div class="topnav">
-      <a href="#">Home</a>
-      <a href="#" style="float:right">About</a>
-    </div>
-    
-    <div class="row">
-      <div class="leftcolumn">
-        <div class="card">
-          <h1>Weather Forecast</h1>
-          <h5 id="date"></h5>
-          <p id="weatherText">Not logged in. Please login to view data.</p>
-          <p id="cord"></p>
-          <p id ="json"></p>
-          <h2 id="location"></h3>
-          <h3 id="desc"></h3>
-          <h3 id="temp"></>
-          <h3 id="feelsLike"></h3>
-          <h3 id="tempMax"></h3>
-          <h3 id="tempMin"></h3>
-        </div>
-      </div>
+  </div>
+  </div>
 
-      <div class="rightcolumn">
-        <div class="card" id="loginCard">
-          <h2>Login</h2>
-          <form name="form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <input type="button" class="button loginButton" value="Login" onclick="logIn()">
-          </form>
-        </div>
+  <div class="topnav">
+    <a href="#">Home</a>
+    <a href="/about.html" style="float:right">About</a>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h1>Weather Forecast</h1>
+        <h5 id="date"></h5>
+        <p id="weatherText">Not logged in. Please login to view data.</p>
+        <p id="cord"></p>
+        <p id="json"></p>
+        <h2 id="location">
+          </h3>
+          <h3 id="desc"></h3>
+          <h3 id="temp">
+            </>
+            <h3 id="feelsLike"></h3>
+            <h3 id="tempMax"></h3>
+            <h3 id="tempMin"></h3>
       </div>
     </div>
-    
-    <div class="footer">
+
+    <div class="rightcolumn">
+      <div class="card" id="loginCard">
+        <h2>Login</h2>
+        <form name="form">
+          <label for="username">Email:</label>
+          <br>
+          <br>
+          <input type="text" id="username" name="username"><br><br>
+          <label for="password">Password:</label>
+          <br>
+          <br>
+          <input type="password" id="password" name="password"><br><br>
+          <input type="button" class="button loginButton" value="Login" onclick="logIn()">
+          <input type="button" class="button loginButton" value="Register" onclick="register()">
+        </form>
+      </div>
     </div>
-    
-    <script type="text/javascript" src="scripts.js"></script>
-    </body>
-    </html>
+  </div>
+
+  <div class="footer">
+  </div>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="scripts.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyD0RrLyMXvmjk-boXSRVrsVWcYEGXOGsbM",
+      authDomain: "weatherapp-3680b.firebaseapp.com",
+      projectId: "weatherapp-3680b",
+      storageBucket: "weatherapp-3680b.appspot.com",
+      messagingSenderId: "161616078411",
+      appId: "1:161616078411:web:bdf794bd431fb5f6eecfce"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+</body>
+
+</html>
