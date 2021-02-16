@@ -12,3 +12,6 @@ Add login through third-party service.
 
 ## 2020-02-15 14:50
 Finished adding login and register functions. Login provided through Firebase.
+
+## 2020-02-16 09:00
+Add about page and make it responsive.
