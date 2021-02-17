@@ -48,17 +48,13 @@
         <h2>Login</h2>
         <form name="form">
           <label for="username">Email:</label>
-          <br>
-          <br>
-          <input type="text" id="username" name="username" class="inputbox"><br><br>
+          <input type="text" id="username" name="username" class="inputbox">
           <label for="password">Password:</label>
+          <input type="password" id="password" name="password" class="inputbox">
           <br>
-          <br>
-          <input type="password" id="password" name="password" class="inputbox"><br><br>
           <input type="button" class="button loginButton" value="Login" onclick="logIn()">
           <input type="button" class="button loginButton" value="Register" onclick="register()">
         </form>
-        <br>
         <p>Or login with Google</p>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
       </div>

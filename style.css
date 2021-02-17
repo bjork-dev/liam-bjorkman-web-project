@@ -6,7 +6,7 @@ body {
   font-family: Arial;
   padding: 10px;
   background: #f1f1f1;
-  animation: fadeInAnimation ease 0.5s;
+  animation: fadeInAnimation ease 0.2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -68,8 +68,8 @@ body {
 
 .rightcolumn-about {
   float: left;
-  width: 60%;
-  padding-right: 20px;
+  width: 70%;
+  padding-left: 20px;
 }
 
 /* Add a card effect for articles */
@@ -136,10 +136,17 @@ div.container {
 
 .inputbox{
   border-radius: 8px;
-  width: 50%;
+  width: 100%;
   padding: 8px 10px;
-  margin: 8px 0;
+  margin: 10px 0;
   box-sizing: border-box;
+  display: inline-block;
+}
+label {
+  display: inline-block;
+  clear: left;
+  width: 250px;
+  text-align: left;
 }
 
 .button {

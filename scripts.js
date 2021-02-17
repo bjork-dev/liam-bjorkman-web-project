@@ -65,19 +65,20 @@ function register()
 
       //Create elements for register form
       var h1 = document.createElement('h2');
-      var emailText = document.createElement('p');
-      var passText = document.createElement('p');
+      var emailText = document.createElement('label');
+      var passText = document.createElement('label');
       var emailBox = document.createElement('input');
       var passwordBox = document.createElement('input');
       var register = document.createElement('button')
       var cancel = document.createElement('button')
       var linebreak = document.createElement("br");
-      var linebreak2 = document.createElement("br");
 
       //Set attributes for all elements
       emailBox.setAttribute("id", "emailBox");
+      emailBox.setAttribute("class", "inputbox");
       emailBox.setAttribute("type", "text");
       passwordBox.setAttribute("id", "passwordBox");
+      passwordBox.setAttribute("class", "inputbox");
       passwordBox.setAttribute("type", "password");
       register.setAttribute("class", "button loginButton");
       cancel.setAttribute("class", "button logoutButton");
@@ -96,7 +97,6 @@ function register()
       document.getElementById('loginCard').appendChild(passText);
       document.getElementById('loginCard').appendChild(passwordBox);
       document.getElementById('loginCard').appendChild(linebreak);
-      document.getElementById('loginCard').appendChild(linebreak2);
       document.getElementById('loginCard').appendChild(register);
       document.getElementById('loginCard').appendChild(cancel);
 
