@@ -1,6 +1,10 @@
 var lon;
 var lat;
 var user;
+var displayName;
+
+
+document.cookie = 'cookie2=value2; SameSite=None; Secure';
 
 function logIn() {
   var username = document.getElementById("username").value;
@@ -24,29 +28,35 @@ function checkLogon() //Check if user is logged in.
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
-      var displayName = user.email.split('@');
-      document.getElementById('loginCard').innerHTML = '';
-      var h1 = document.createElement('h1');
-      h1.innerHTML = "Hello, " + displayName[0] + "!";
-      document.getElementById('loginCard').appendChild(h1);
-      var logout = document.createElement('button')
-      logout.setAttribute("class", "button logoutButton");
-      logout.innerHTML = 'Logout';
-
-      logout.onclick = function refreshPage() {
-        window.location.reload();
-      };
-
-      document.getElementById("loginCard").appendChild(logout);
-
-      document.getElementById("weatherText").innerHTML = "";
-      document.getElementById("date").innerHTML = new Date().toLocaleString();
+      var split = user.email.split('@');
+      displayName = split[0];
+      generateDiv();
       getWeather();
 
     } else {
       // No user is signed in.
     }
   });
+}
+function generateDiv()
+{
+  document.getElementById('loginCard').innerHTML = '';
+      var h1 = document.createElement('h1');
+      h1.innerHTML = "Hello, " + displayName + "!";
+      document.getElementById('loginCard').appendChild(h1);
+      var logout = document.createElement('button')
+      logout.setAttribute("class", "button logoutButton");
+      logout.innerHTML = 'Logout';
+
+      logout.onclick = function refreshPage() {
+        signOut(); // If user is logged in with Google
+        window.location.reload(); // Reload page to logout user
+      };
+
+      document.getElementById("loginCard").appendChild(logout);
+
+      document.getElementById("weatherText").innerHTML = "";
+      document.getElementById("date").innerHTML = new Date().toLocaleString();
 }
 
 function register()
@@ -146,4 +156,21 @@ window.onload = function getLocation() { //Fetch coordinates on window load
 async function showPosition(position) { //Assign coords to global variables to use in API call.
   lat = position.coords.latitude;
   lon = position.coords.longitude;
+}
+
+function onSignIn(googleUser) { // Sign in with Google
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  displayName = profile.getName();
+  generateDiv();
+  getWeather();
+}
+function signOut() { // Sign out of google
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+  });
 }

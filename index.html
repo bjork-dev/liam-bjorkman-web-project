@@ -6,6 +6,8 @@
   <title>Weather</title>
   <meta name="description" content="Web Page">
   <meta name="keywords" content="web page">
+  <!--- Google meta for login -->
+  <meta name="google-signin-client_id" content="161616078411-jr7fpcuvq1fnjkkrud10pojkqma3ra0n.apps.googleusercontent.com">
 </head>
 
 <body>
@@ -55,6 +57,9 @@
           <input type="button" class="button loginButton" value="Login" onclick="logIn()">
           <input type="button" class="button loginButton" value="Register" onclick="register()">
         </form>
+        <br>
+        <p>Or login with Google</p>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
       </div>
     </div>
   </div>
@@ -65,6 +70,9 @@
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <!-- Google login script -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!-- Custom scripts -->
   <script src="scripts.js"></script>
 
   <script>
