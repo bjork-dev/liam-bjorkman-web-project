@@ -77,6 +77,8 @@ body {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.24), 0 1px 15px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Clear floats after the columns */
@@ -163,23 +165,41 @@ label {
 }
 
 .loginButton {
-  background-color: rgb(35, 100, 141);
-  border-radius: 8px;
-  padding: 10px 20px;
+	background-color:rgb(35, 100, 141);;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:9px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
 }
-
-.loginButton:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+.loginButton:hover,
+.loginButton:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid #cce1f5;
 }
 
 .logoutButton {
-  background-color: rgb(199, 23, 23);
-  border-radius: 8px;
-  padding: 10px 20px;
+  background-color:rgb(35, 100, 141);;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:9px 19px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
 }
 
 .logoutButton:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  border-color: rgba(255,255,255,1);
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */

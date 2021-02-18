@@ -18,3 +18,6 @@ Add about page and make it responsive.
 
 ## 2020-02-17 10:00
 Add Google login functions
+
+## 2020-02-18 12:00
+Update design

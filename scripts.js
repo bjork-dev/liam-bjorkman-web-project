@@ -3,8 +3,7 @@ var lat;
 var user;
 var displayName;
 
-
-document.cookie = 'cookie2=value2; SameSite=None; Secure';
+document.cookie = 'cookie2=value2; SameSite=None; Secure'; // For google auto sign in
 
 function logIn() {
   var username = document.getElementById("username").value;
