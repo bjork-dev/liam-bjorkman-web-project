@@ -127,9 +127,11 @@ function register()
 }
 
 const getWeather = async () => { // Use API and global variables to fetch correct weather data.
+  var load = document.getElementById("loader")
+  load.style.display = "block";
   const response = await fetch("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + lat + "&lon=" + lon + "&appid=25bc8d0925bf43088ae50ecb975c424f");
   const myJson = await response.json(); //extract JSON from the http response
-
+  load.style.display ="none"
   if (myJson.cod == "400") //Display info if location tracking is disabled in browser.
   {
     document.getElementById("weatherText").innerHTML = "Enable location in browser to view the weather.";
