@@ -21,3 +21,6 @@ Add Google login functions
 
 ## 2020-02-18 12:00
 Update design
+
+## 2020-02-21 15:30 
+Make site work with Github Pages
