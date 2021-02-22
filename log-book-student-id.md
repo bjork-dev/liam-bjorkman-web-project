@@ -24,3 +24,6 @@ Update design
 
 ## 2020-02-21 15:30 
 Make site work with Github Pages
+
+## 2020-02-22 10:00
+Add favicon, fix about page.
