@@ -27,3 +27,6 @@ Make site work with Github Pages
 
 ## 2020-02-22 10:00
 Add favicon, fix about page.
+
+## 2020-02-23 10:00
+Add email verification and reset password function.

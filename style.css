@@ -213,6 +213,24 @@ label {
   border-color: rgba(255,255,255,1);
 }
 
+/* Red Cancel Buton */
+.cancelButton {
+  background-color:rgba(145, 145, 145, 0.993);
+	border: 1px solid #00000059;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: 16px;
+	padding: 9px 19px;
+	text-decoration:none;
+	text-shadow: 0px 1px 0px #154682;
+}
+.cancelButton:hover {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  border-color: rgba(255,255,255,1);
+}
+
 /* Loading animation */
 .loader {
   border: 16px solid #f3f3f3;

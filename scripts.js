@@ -2,10 +2,12 @@ var lon;
 var lat;
 var user;
 var displayName;
+var emailVerified;
 var imgUrl = "https://images.emojiterra.com/twitter/v13.0/512px/1f914.png";
 
 // Cookie for staying logged in with email/pwd.
 document.cookie = 'cookie2=value2; SameSite=None; Secure';
+
 
 function logIn() {
   var username = document.getElementById("username").value;
@@ -31,6 +33,7 @@ function checkLogon() //Check if user is logged in.
       var split = user.email.split('@');
       // Create display name from email
       displayName = split[0];
+      emailVerified = user.emailVerified;
       // Call functions
       generateDiv();
       getWeather();
@@ -42,20 +45,25 @@ function generateDiv() {
   document.getElementById('loginCard').innerHTML = '';
   
   var h1 = document.createElement('h1');
+  var h4 = document.createElement('h4');
   var img = document.createElement('img');
   var logout = document.createElement('button')
 
   img.src = imgUrl;
   h1.innerHTML = "Hello, " + displayName + "!";
+  h4.innerHTML = "Please verify you account.";
+
   logout.innerHTML = 'Logout';
 
   img.setAttribute("class", "profileImage")
   logout.setAttribute("class", "button logoutButton");
 
-  
-
   document.getElementById('loginCard').appendChild(img);
   document.getElementById('loginCard').appendChild(h1);
+  if(emailVerified == false)
+  {
+  document.getElementById('loginCard').appendChild(h4);
+  }
   document.getElementById("loginCard").appendChild(logout);
   document.getElementById("weatherText").innerHTML = "";
   document.getElementById("date").innerHTML = new Date().toLocaleString();
@@ -88,7 +96,7 @@ function register() {
   passwordBox.setAttribute("class", "inputbox");
   passwordBox.setAttribute("type", "password");
   register.setAttribute("class", "button loginButton");
-  cancel.setAttribute("class", "button logoutButton");
+  cancel.setAttribute("class", "button cancelButton");
 
   // Set inner HTML for elements.
   h1.innerHTML = "Register new account"
@@ -118,12 +126,16 @@ function register() {
       .then((userCredential) => {
         // Signed in 
         var user = userCredential.user;
-        window.alert("User Created")
+        user.sendEmailVerification().then(function() {
+          // Email sent.
+        }).catch(function(error) {
+          // An error happened.
+        });
+        window.alert("User created, mail sent to " + username + ", please verify your account")
         checkLogon();
         // ...
       })
       .catch((error) => {
-        var errorCode = error.code;
         var errorMessage = error.message;
         window.alert(errorMessage);
         // ..
@@ -133,6 +145,48 @@ function register() {
   cancel.onclick = function refreshPage() {
     window.location.reload();
   };
+}
+
+function generateForgotDiv(){
+  document.getElementById('loginCard').innerHTML = '';
+  var h2 = document.createElement('h2');
+  var emailText = document.createElement('label');
+  var emailBox = document.createElement('input');
+  var submit = document.createElement('button')
+  var cancel = document.createElement('button')
+
+  emailBox.setAttribute("id", "ba");
+  emailBox.setAttribute("class", "inputbox");
+  emailBox.setAttribute("type", "text");
+  submit.setAttribute("class", "button loginButton");
+  cancel.setAttribute("class", "button cancelButton");
+
+  h2.innerHTML = "Forgot Password"
+  emailText.innerHTML = "Email: ";
+  submit.innerHTML = "Submit"
+  cancel.innerHTML = "Cancel";
+
+  document.getElementById('loginCard').appendChild(h2);
+  document.getElementById('loginCard').appendChild(emailText);
+  document.getElementById('loginCard').appendChild(emailBox);
+  document.getElementById('loginCard').appendChild(submit);
+  document.getElementById('loginCard').appendChild(cancel);
+ 
+  submit.onclick = forgotPassword;
+  cancel.onclick = function refreshPage() {
+    window.location.reload();
+  };
+}
+
+function forgotPassword(){
+  var emailAddress = document.getElementById("ba").value;
+  firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
+    window.alert("Sent password reset to " + emailAddress)
+    window.location.reload();
+  }).catch(function(error) {
+    window.alert(error.message);
+  });
 }
 
 
